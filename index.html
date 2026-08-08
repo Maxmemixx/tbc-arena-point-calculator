@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TBC Arena Point Calculator</title>
+    <meta
+        name="TBC Arena Point Calulator"
+        content="Calculate Burning Crusade Anniversary arena points for 2v2, 3v3 and 5v5."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>TBC Arena Points Calculator</h1>
+            <p>
+                Enter your rating in each bracket to see how many arena points you will receive.
+            </p>
+        </header>
+
+        <section class="calculator">
+
+            <div class="bracket" data-bracket="2v2">
+
+                <div class="bracket-header">
+                    <h2>2v2</h2>
+                    <span class="multiplier">76%</span>
+                </div>
+
+                <label for="rating-2v2">
+                    Rating
+                </label>
+
+                <input
+                    id="rating-2v2"
+                    type="number"
+                    min="0"
+                    placeholder="Enter rating"
+                >
+
+                <div class="bracket-result">
+                    <span>Arena points</span>
+                    <strong id="points-2v2">—</strong>
+                </div>
+
+            </div>
+
+
+            <div class="bracket" data-bracket="3v3">
+
+                <div class="bracket-header">
+                    <h2>3v3</h2>
+                    <span class="multiplier">88%</span>
+                </div>
+
+                <label for="rating-3v3">
+                    Rating
+                </label>
+
+                <input
+                    id="rating-3v3"
+                    type="number"
+                    min="0"
+                    placeholder="Enter rating"
+                >
+
+                <div class="bracket-result">
+                    <span>Arena points</span>
+                    <strong id="points-3v3">—</strong>
+                </div>
+
+            </div>
+
+            <div class="bracket" data-bracket="5v5">
+
+                <div class="bracket-header">
+                    <h2>5v5</h2>
+                    <span class="multiplier">100%</span>
+                </div>
+
+                <label for="rating-5v5">
+                    Rating
+                </label>
+
+                <input
+                    id="rating-5v5"
+                    type="number"
+                    min="0"
+                    placeholder="Enter rating"
+                >
+
+                <div class="bracket-result">
+                    <span>Arena points</span>
+                    <strong id="points-5v5">—</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="final-result">
+
+            <span class="result-label">
+                Weekly Arena Points
+            </span>
+
+            <div
+                class="final-points"
+                id="final-points"
+            >
+                —
+            </div>
+
+        </section>
+
+        <section class="info">
+
+            <h2>How it works</h2>
+
+            <p>
+                The calculator determines the base arena points from your
+                rating and then applies the appropriate multiplier for
+                each bracket.
+            </p>
+
+            <b>
+                Note: You must play at least 10 games in a bracket to be eligible for points from that bracket.
+            </b>
+
+            <div class="formula">
+                <strong>Base formula:</strong>
+                <br><br>
+                p = ((1651.94 − 475) /
+                (1 + 2,500,000 × 2.71828<sup>−0.009r</sup>) + 475) × 1.5
+            </div>
+
+            <ul>
+                <li>2v2: 76% of base points</li>
+                <li>3v3: 88% of base points</li>
+                <li>5v5: 100% of base points</li>
+            </ul>
+
+            <p>
+                Your weekly arena points are determined by whichever
+                eligible bracket gives you the highest number of points.
+            </p>
+
+        </section>
+
+
+        <footer>
+            <p>TBC Arena Points Calculator</p>
+        </footer>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
