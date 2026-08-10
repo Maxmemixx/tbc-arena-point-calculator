@@ -74,22 +74,21 @@ function updateCalculator() {
     }
 
     const finalPointsElement = document.getElementById("final-points");
-    const bestBracketElement = document.getElementById("best-bracket");
 
     if (results.length === 0) {
-
         finalPointsElement.textContent = "—";
-        bestBracketElement.textContent = "Enter your ratings above.";
         return;
     }
 
     // Sorts from highest to lowest points.
     results.sort((a, b) => b.points - a.points);
 
+    // The first result is the highest.
     const best = results[0];
 
+    // Displays the highest number of points.
     finalPointsElement.textContent = formatPoints(best.points);
-    bestBracketElement.textContent = `${best.bracket} gives you the highest number of points.`;
+
 
     // Highlights the winning bracket.
     const winningBracket = document.querySelector(`[data-bracket="${best.bracket}"]`);
