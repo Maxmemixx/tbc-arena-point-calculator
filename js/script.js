@@ -83,17 +83,18 @@ function updateCalculator() {
     // Sorts from highest to lowest points.
     results.sort((a, b) => b.points - a.points);
 
-    // The first result is the highest.
-    const best = results[0];
-
     // Displays the highest number of points.
-    finalPointsElement.textContent = formatPoints(best.points);
+    finalPointsElement.textContent = formatPoints(results[0].points);
 
+    // Highlights a bracket when the user has entered more than one rating.
+    if (results.length > 1) {
 
-    // Highlights the winning bracket.
-    const winningBracket = document.querySelector(`[data-bracket="${best.bracket}"]`);
+        const best = results[0]; // The first result is the highest
 
-    winningBracket.classList.add("best");
+        const winningBracket = document.querySelector(`[data-bracket="${best.bracket}"]`);
+
+        winningBracket.classList.add("best");
+    }
 }
 
 // Recalculates whenever a rating changes.
