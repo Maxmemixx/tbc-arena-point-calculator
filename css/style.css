@@ -168,6 +168,10 @@ input::placeholder {
     line-height: 1.1;
 }
 
+.final-points .placeholder {
+    color: #a7aab4;
+}
+
 .best-bracket {
     color: #a7aab4;
     font-size: 0.9rem;

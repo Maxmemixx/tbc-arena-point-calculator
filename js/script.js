@@ -76,7 +76,7 @@ function updateCalculator() {
     const finalPointsElement = document.getElementById("final-points");
 
     if (results.length === 0) {
-        finalPointsElement.textContent = "—";
+        finalPointsElement.innerHTML = '<span class="placeholder">—</span>';
         return;
     }
 
